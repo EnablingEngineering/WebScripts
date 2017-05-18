@@ -1,10 +1,19 @@
+Note: all scripts are saved within barebones HTML files for ease of testing during development. To install on our website, some minor modifications need to be made. Start by navigating to the script injection interface in SquareSpace:
+    1. Login to our SquareSpace account and open up enablingengineering.org 
+    2. Find the target page in the sidebar
+    2. Open the page's settings (gear icon appears on hover)
+    3. Click "Advanced"
+The text box in this window is where you paste the script. To go from the HTML files in this repository to a functional script that's installed on the page of enablingengineering.org you're targeting:
+    1. Copy the relevant part of the HTML file, starting with the first <script> tag and ending with the last </script> tag.
+    2. Change the line "<script src="airtable.browser.js"></script>" to "<script src="/s/airtablebrowser.js"></script>" 
+        (airtablebrowser.js is uploaded as a file in our SquareSpace account, and the /s/ points it there for the source)
 
 jQuery Fundamentals: http://jqfundamentals.com/chapter/jquery-basics
 
 The goal of this project is to display dashboard-style information about Enabling Engineering by accessing our data with the Airtable API. To get started, it will be structured like this: 
 
 STATS INDEX
-    - a list of links to the dashboard pages available
+    - a list of the dashboard pages available
 
 ACTIVITY
     - total number of active projects (number)
