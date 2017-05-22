@@ -33,7 +33,7 @@
                             var newOption = "<option value='" + record.get('Title') + "'>" + record.get('Title');
                             $dropdown.append(newOption);
 
-                            $( ".main-content-wrapper" ).prepend($dropdown);
+                            $( ".main-content-wrapper" ).append($dropdown);
                         }    
                     }); 
                     
