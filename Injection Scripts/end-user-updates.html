@@ -57,7 +57,8 @@
                         if (record.get('Title') == title) {
                             
                             console.log('Retrieved', record.get('Title')); 
-                            var $projectInfo = $('<div>');
+                            $('div').remove('.project');
+                            var $projectInfo = $("<div class='project' id='" + title + "'>");
                             $projectInfo.append($('<h3>').text(record.get('Title')));
 
                             var reportIDs = record.get('Reports')
@@ -70,9 +71,10 @@
                                     base('Reports').find(reportID, function(err, record2) {
                                         var reportDate = record2.fields.Date;
                                         var report = record2.fields.Report;
-                                        $projectInfo.append($('<strong>').text(reportDate));
-                                        $projectInfo.append($('<p>').text(report));
+                                        $projectInfo.append($("<strong>").text(reportDate));
+                                        $projectInfo.append($("<p>").text(report));
                                         console.log(report);
+                                        $projectInfo.f
                                     })
                                 })
                             } else {$projectInfo.append($('<p>').text('no reports')); console.log('oops')}
